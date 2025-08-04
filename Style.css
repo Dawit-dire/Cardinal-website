@@ -1,0 +1,466 @@
+/* Import a Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Define Color Palette */
+:root {
+    --midnight-blue: #0b132b;
+    --white: #FFFFFF;
+    --glow-red: #ff3a4e;
+    --facebook-blue: #1877f2;
+    --light-gray: #f8f9fa;
+    --text-color: #e0e0e0;
+    --text-dark: #343a40;
+    --error-red: #dc3545;
+    --success-green: #198754;
+    --glow-green: #28a745;
+}
+
+/* General Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--midnight-blue);
+    color: var(--text-color);
+    padding-top: 70px;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    color: var(--white);
+}
+
+.section-title {
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--white);
+}
+
+.highlight-red {
+    color: var(--glow-red);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(255, 58, 78, 0.5);
+}
+
+.highlight-blue {
+    color: var(--facebook-blue);
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(24, 119, 242, 0.5);
+}
+
+.highlight-white {
+    color: var(--white);
+    font-weight: 700;
+}
+
+a {
+    color: var(--glow-red);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--white);
+}
+
+/* Navigation Bar */
+.custom-navbar {
+    background-color: var(--midnight-blue);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+}
+
+.navbar-brand {
+    color: var(--white) !important;
+    font-weight: 700;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.nav-link {
+    color: var(--white) !important;
+    margin-left: 15px;
+    font-weight: 400;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--glow-red);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: var(--glow-red) !important;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 60%;
+}
+
+/* Hero Section */
+#hero {
+    min-height: 90vh;
+    background: linear-gradient(rgba(11, 19, 43, 0.8), rgba(25, 25, 112, 0.9)), url('https://via.placeholder.com/1920x1080/191970/00FFFF?text=Marketing+Background') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    color: var(--white);
+    padding: 2rem 0;
+}
+
+.hero-title {
+    font-weight: 700;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+.btn-primary.hero-cta {
+    background-color: var(--glow-red);
+    border-color: var(--glow-red);
+    color: var(--white);
+    font-weight: 600;
+    padding: 12px 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 58, 78, 0.3);
+}
+
+.btn-primary.hero-cta:hover {
+    background-color: var(--white);
+    border-color: var(--white);
+    color: var(--midnight-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 58, 78, 0.5);
+}
+
+/* About Section */
+#about {
+    background-color: rgba(11, 19, 43, 0.5);
+    padding: 80px 0;
+}
+
+/* Services Section */
+#services {
+    position: relative;
+    padding: 80px 0;
+}
+
+.quote-text {
+    background-color: var(--glow-red);
+    color: var(--white);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#services .list-group-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 15px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    padding: 1.5rem;
+}
+
+#services .list-group-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
+    border-color: var(--glow-red);
+}
+
+.service-item .form-check-input {
+    margin-top: 0.3em;
+    cursor: pointer;
+    border-color: var(--glow-);
+}
+
+.service-item .form-check-input:checked {
+    background-color: var(--glow-red);
+    border-color: var(--glow-red);
+}
+
+.service-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.3rem;
+    display: inline-block;
+}
+
+.service-title i {
+    width: 25px;
+}
+
+/* Main Service Animation */
+.service-item.main-service {
+    border-left: 5px solid var(--facebook-blue);
+    background-color: rgba(24, 119, 242, 0.08);
+    animation-duration: 2s;
+    animation-delay: 0.2s;
+}
+
+.service-item[data-service-name="Instagram Advertising"] {
+    border-left: 5px solid var(--glow-red);
+    background-color: rgba(255, 58, 78, 0.08);
+    animation-duration: 2s;
+    animation-delay: 0.4s;
+}
+
+.service-item.main-service:hover,
+.service-item[data-service-name="Instagram Advertising"]:hover {
+    animation: subtlePulse 1.5s infinite ease-in-out;
+}
+
+@keyframes subtlePulse {
+    0%, 100% { box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1); }
+    50% { box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2); }
+}
+
+/* Get Quote Button */
+#get-quote-btn {
+    background-color: var(--glow-red);
+    border-color: var(--glow-red);
+    color: var(--white);
+    font-weight: 600;
+    padding: 12px 35px;
+    transition: all 0.3s ease;
+}
+
+#get-quote-btn:hover {
+    background-color: var(--white);
+    border-color: var(--white);
+    color: var(--midnight-blue);
+    transform: scale(1.05);
+}
+
+/* Feedback Message Styling */
+.feedback-message {
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.feedback-message.show {
+    display: block;
+    opacity: 1;
+}
+
+.feedback-message.error {
+    background-color: rgba(220, 53, 69, 0.2);
+    color: #ffacac;
+    border: 1px solid var(--error-red);
+    animation: shake 0.5s ease-in-out;
+}
+
+.feedback-message.success {
+    background-color: rgba(40, 167, 69, 0.2);
+    color: #a3ffb3;
+    border: 1px solid var(--glow-green);
+    animation: successGlow 1.5s ease-in-out;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-8px); }
+    20%, 40%, 60%, 80% { transform: translateX(8px); }
+}
+
+@keyframes successGlow {
+    0%, 100% { box-shadow: 0 0 15px rgba(40, 167, 69, 0.5); }
+    50% { box-shadow: 0 0 25px rgba(40, 167, 69, 0.8); }
+}
+
+/* Contact Section */
+#contact {
+    background-color: var(--midnight-blue);
+    padding: 80px 0;
+}
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-info a {
+    color: var(--glow-red);
+    transition: color 0.3s ease;
+}
+
+.contact-info a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+.social-links a {
+    color: var(--glow-red);
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.social-links a:hover {
+    color: var(--white);
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    background-color: rgba(11, 19, 43, 0.8);
+    color: rgba(255, 255, 255, 0.7);
+}
+
+footer p {
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .navbar-nav {
+        background-color: var(--midnight-blue);
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+    
+    .nav-link {
+        margin-left: 0;
+        padding: 10px 15px;
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+}
+
+@media (max-width: 767.98px) {
+    #hero {
+        min-height: 80vh;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .hero-cta {
+        display: block;
+        width: fit-content;
+        margin: 0 auto 10px;
+    }
+}
+.service-item .form-checked-content small {
+    background: linear-gradient(45deg, var(--glow-red), var(--facebook-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 500;
+}
+/* ===== Service Card Hover Effects ===== */
+.service-item:hover {
+    transform: translateY(-10px) !important;
+    box-shadow: 0 15px 30px rgba(255, 58, 78, 0.3) !important;
+    border-color: var(--glow-red) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Facebook Card Specific */
+.service-item.main-service:hover {
+    border-left: 5px solid var(--facebook-blue) !important;
+    background: rgba(24, 119, 242, 0.15) !important;
+}
+
+/* Instagram Card Specific */
+.service-item[data-service-name="Instagram Advertising"]:hover {
+    border-left: 5px solid var(--glow-red) !important;
+    background: rgba(255, 58, 78, 0.15) !important;
+}
+
+/* Pulse Animation on Hover */
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(255, 58, 78, 0.4); }
+    70% { box-shadow: 0 0 0 15px rgba(255, 58, 78, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 58, 78, 0); }
+}
+
+.service-item:hover .service-title {
+    animation: pulse-glow 2s infinite;
+}
+/* ===== Mobile Responsiveness ===== */
+@media (max-width: 767px) {
+    /* Navigation */
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    /* Hero Section */
+    #hero {
+        min-height: 70vh;
+        padding: 60px 0;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    /* Services Section */
+    #services .list-group-item {
+        padding: 1rem;
+    }
+    
+    .service-title {
+        font-size: 1.1rem;
+    }
+    
+    /* Contact Section */
+    .contact-options {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Stats Grid */
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Testimonials */
+    .testimonials {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Smaller Phones */
+@media (max-width: 480px) {
+    /* Buttons */
+    .glow-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    /* Service Cards */
+    .service-card {
+        padding: 20px 15px;
+    }
+    
+    /* Hide decorative elements if needed */
+    .popular-badge {
+        display: none;
+    }
+  }
